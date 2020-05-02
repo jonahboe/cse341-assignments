@@ -1,6 +1,23 @@
 extends ../../layouts/main-layout
 
+block styles
+    link(rel="stylesheet", type="text/css", href="/stylesheets/form.css")
+
 block intro
-    p This is the placeholder for Prove Activity 02
+    p Submit Book Summaries.
 
 block content
+    main
+        if displaySummary === true
+            h2 Summary of:
+                i  #{bookTitle}
+            p
+                b
+                    strong #{bookSummary}
+        else
+            form.form(action="/pa02/submitSummary", method="POST")
+                label(for="book_title") Book Title:
+                input(type="text", name="title")#book_title
+                label(for="book_summary") Summary:
+                textarea(name="summary")#book_summary
+                button.btn(type="submit") Submit Summary

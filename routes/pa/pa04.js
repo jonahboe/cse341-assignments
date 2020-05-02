@@ -6,7 +6,7 @@ router.get('/',(req, res, next) => {
     res.render('pages/pa/pa04', {
         title: 'Prove Activity 04',
         path: '/pa04', // For pug, EJS
-        activePA03: true, // For HBS
+        activePA04: true, // For HBS
         contentCSS: true, // For HBS
     });
 });

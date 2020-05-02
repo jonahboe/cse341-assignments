@@ -11,7 +11,7 @@ router.get('/',(req, res, next) => {
     message = '';
     res.render('pages/ta/ta02', {
         title: 'Team Activity 02', 
-        path: '/ta/ta02', // For pug, EJS
+        path: '/ta02', // For pug, EJS
         activeTA03: true, // For HBS
         contentCSS: true, // For HBS
         users: userList,

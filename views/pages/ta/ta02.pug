@@ -1,0 +1,31 @@
+extends ../../layouts/main-layout
+
+block styles
+    link(rel="stylesheet", type="text/css", href="/stylesheets/form.css")
+    link(rel="stylesheet", type="text/css", href="/stylesheets/table.css")
+
+block intro
+    p Team Activity 02: Add and Remove Users.
+
+block content
+    main
+        form.form(action="/ta02/addUser", method="POST")
+            label(for="add_user") New User Name:
+            input(type="text", name="name")#add_user
+            button.btn(type="submit") Add User
+
+        form.form(action="/ta02/removeUser", method="POST")
+            label(for="remove_user") User to Remove:
+            input(type="text", name="name")#remove_user
+            button.btn(type="submit") Remove User
+
+        label(for="user_table")#tableLable Users Table:
+        table()#user_table
+            tr.table_heading
+                th User Name
+            each user in users
+                tr
+                    th #{user.name}
+
+    if message !== ''
+        script alert("#{message}");

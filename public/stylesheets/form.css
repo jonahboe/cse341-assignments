@@ -1,0 +1,25 @@
+.form {
+    width: 100%;
+    margin: 1rem 0 4rem;
+}
+
+.form label,
+.form input {
+    display: block;
+}
+
+.form label {
+    margin-bottom: 0
+}
+
+.form input {
+    border: 1px solid #a1a1a1;
+    font: inherit;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    width: 30%;
+}
+
+.form button:hover {
+    background: #b8dcff;
+}

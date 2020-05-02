@@ -1,0 +1,26 @@
+/*
+    This style sheet came from w3schools.com
+    Some liberties were taken in adapting it to this application
+ */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table_heading {
+    font-size: large;
+    background: #a1a1a1;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #b8dcff;
+}

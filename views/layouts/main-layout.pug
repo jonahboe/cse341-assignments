@@ -34,6 +34,18 @@ html(lang="en")
                                 a(href="/ta03") TA03
                             li(class=(path === '/ta04' ? 'active' : ''))
                                 a(href="/ta04") TA04
+                    li.dropdown
+                        a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-expanded="false") Prove Activities
+                            span.caret
+                        ul.dropdown-menu(role="menu")
+                            li(class=(path === '/pa01' ? 'active' : ''))
+                                a(href="/pa01") PA01
+                            li(class=(path === '/pa02' ? 'active' : ''))
+                                a(href="/pa02") PA02
+                            li(class=(path === '/pa03' ? 'active' : ''))
+                                a(href="/pa03") PA03
+                            li(class=(path === '/pa04' ? 'active' : ''))
+                                a(href="/pa04") PA04
 
         .jumbotron.text-center
             .container

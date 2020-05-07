@@ -9,7 +9,7 @@ let message = '';
 router.get('/',(req, res, next) => {
     const msg = message;
     message = '';
-    res.render('pages/ta/ta02', {
+    res.render('pages/team/week02/ta02', {
         title: 'Team Activity 02', 
         path: '/ta02', // For pug, EJS
         activeTA03: true, // For HBS

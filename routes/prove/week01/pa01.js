@@ -1,12 +1,12 @@
-//TA03 PLACEHOLDER
+//PA01 PLACEHOLDER
 const express = require('express');
 const router = express.Router();
 
 router.get('/',(req, res, next) => {
-    res.render('pages/ta/ta03', {
-        title: 'Team Activity 03', 
-        path: '/ta03', // For pug, EJS
-        activeTA03: true, // For HBS
+    res.render('pages/prove/week01/pa01', {
+        title: 'Prove Activity 01',
+        path: '/pa01', // For pug, EJS
+        activePA01: true, // For HBS
         contentCSS: true, // For HBS
     });
 });

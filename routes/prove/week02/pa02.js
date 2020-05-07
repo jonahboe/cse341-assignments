@@ -7,7 +7,7 @@ let bookSummary = '';
 let displaySummary = false;
 
 router.get('/',(req, res, next) => {
-    res.render('pages/pa/pa02', {
+    res.render('pages/prove/week02/pa02', {
         title: 'Prove Activity 02',
         path: '/pa02', // For pug, EJS
         activePA02: true, // For HBS

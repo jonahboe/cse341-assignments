@@ -9,6 +9,9 @@ router.get('/',(req, res, next) => {
         activeTA03: true, // For HBS
         contentCSS: true, // For HBS
     });
+
+    const content = JSON.parse('https://byui-cse.github.io/cse341-course/lesson03/items.json');
+    console.log(content); // this will show the info it in firebug console
 });
 
 module.exports = router;

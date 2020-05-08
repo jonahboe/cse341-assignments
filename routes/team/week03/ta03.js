@@ -17,13 +17,19 @@ router.get('/',(req, res, next) => {
 
 router.post('/', (req, res, next) => {
     search = req.body.input;
-    const products = jsonParser.getJSON('https://byui-cse.github.io/cse341-course/lesson03/items.json');
-    const content = [];
-    for (const item of products) {
-        for (const tag of item.tags)
-            if (tag === search)
-                content.push(item);
+
+    let content = [];
+    if (search === "")
+        content = jsonParser.getJSON('https://byui-cse.github.io/cse341-course/lesson03/items.json');
+    else {
+        const products = jsonParser.getJSON('https://byui-cse.github.io/cse341-course/lesson03/items.json');
+        for (const item of products) {
+            for (const tag of item.tags)
+                if (tag === search)
+                    content.push(item);
+        }
     }
+
     res.render('pages/team/week03/ta03', {
         title: 'Team Activity 03',
         path: '/ta03', // For pug, EJS

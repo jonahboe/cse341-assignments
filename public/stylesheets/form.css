@@ -1,6 +1,7 @@
 .form {
     width: 100%;
     margin: 1rem 0 4rem;
+    padding: 0 30%;
 }
 
 .form label,
@@ -17,7 +18,7 @@
     font: inherit;
     border-radius: 2px;
     margin-bottom: 1rem;
-    width: 30%;
+    width: 100%;
 }
 
 .form textarea {

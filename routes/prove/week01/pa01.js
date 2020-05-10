@@ -1,14 +1,8 @@
 //PA01 PLACEHOLDER
 const express = require('express');
+const controller = require('../../../controllers/prove/week01/controller');
 const router = express.Router();
 
-router.get('/',(req, res, next) => {
-    res.render('pages/prove/week01/pa01', {
-        title: 'Prove Activity 01',
-        path: '/pa01', // For pug, EJS
-        activePA01: true, // For HBS
-        contentCSS: true, // For HBS
-    });
-});
+router.get('/', controller.getPage);
 
 module.exports = router;

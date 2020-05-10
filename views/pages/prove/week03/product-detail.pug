@@ -1,0 +1,16 @@
+extends ../../../layouts/main-layout
+
+block styles
+
+block intro
+    p Personal Project Setup
+
+block content
+    main
+
+        h3 #{product.name}
+        img.product-image(src=product.imageUrl)
+        h4 Description:
+        p #{product.description}
+        h4 Price:
+        p #{product.price}

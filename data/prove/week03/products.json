@@ -1,0 +1,161 @@
+[
+  {
+    "tags": [
+      "Trees"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/1.jpg",
+    "price": 10.99,
+    "name": "Handcrafted Trees Tech",
+    "id": "0001",
+    "description": "enim corporis voluptatibus laudantium possimus alias dolorem voluptatem similique aut aliquam voluptatem voluptatem omnis id consequatur"
+  },
+  {
+    "tags": [
+      "Beach",
+      "Ocean",
+      "Water"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/2.jpg",
+    "price": 19.99,
+    "name": "Rustic Beach Tech",
+    "id": "0002",
+    "description": "totam at veritatis eligendi assumenda ex quia praesentium quibusdam ducimus"
+  },
+  {
+    "tags": [
+      "Animal",
+      "Bear"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/3.jpg",
+    "price": 17.99,
+    "name": "Handcrafted Bear Tech",
+    "id": "0003",
+    "description": "vitae mollitia et in accusantium est voluptas officiis est non"
+  },
+  {
+    "tags": [
+      "Road"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/4.jpg",
+    "price": 15.99,
+    "name": "Refined Road Tech",
+    "id": "0004",
+    "description": "explicabo fugit magnam fugit dolorem itaque unde quidem est quia ut a veritatis sit facere possimus fugit ipsam"
+  },
+  {
+    "tags": [
+      "Ocean",
+      "Rocks"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/5.jpg",
+    "price": 10.99,
+    "name": "Unbranded Ocean Tech",
+    "id": "0005",
+    "description": "facilis aut velit vitae sit dolorum illum nostrum pariatur dolorem vel atque quasi placeat qui"
+  },
+  {
+    "tags": [
+      "Sunset",
+      "Beach",
+      "Ocean"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/6.jpg",
+    "price": 9.99,
+    "name": "Rustic Ocean Tech",
+    "id": "0006",
+    "description": "libero reprehenderit blanditiis quidem laborum ullam quae fuga consequuntur minima praesentium consequatur qui excepturi nostrum tempora sunt deleniti"
+  },
+  {
+    "tags": [
+      "Rust",
+      "Old",
+      "Car"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/7.jpg",
+    "price": 19.99,
+    "name": "Sleek Old Tech",
+    "id": "0007",
+    "description": "necessitatibus suscipit iure quia voluptates voluptas quidem ipsum laboriosam adipisci"
+  },
+  {
+    "tags": [
+      "Coffee"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/8.jpg",
+    "price": 14.99,
+    "name": "Sleek Coffee Tech",
+    "id": "0008",
+    "description": "et adipisci explicabo consequatur rerum voluptas dolorem qui omnis vel"
+  },
+  {
+    "tags": [
+      "Trees",
+      "Fog",
+      "People"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/9.jpg",
+    "price": 16.99,
+    "name": "Rustic Trees Tech",
+    "id": "0009",
+    "description": "ut architecto est similique sit nostrum sit sed ipsa itaque aliquam nesciunt reprehenderit et neque aut id nulla dolore sed sit facere eligendi"
+  },
+  {
+    "tags": [
+      "Sunset",
+      "Ocean",
+      "Dock"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/10.jpg",
+    "price": 18.99,
+    "name": "Sleek Ocean Tech",
+    "id": "0010",
+    "description": "magnam maxime nostrum minima dolores repellat laborum pariatur et quia maiores quidem eos quod est voluptas voluptatem quia ipsum odit dolorem et blanditiis aut voluptates"
+  },
+  {
+    "tags": [
+      "Person",
+      "Hills",
+      "Animals",
+      "Sheep"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/11.jpg",
+    "price": 16.99,
+    "name": "Ergonomic Person Tech",
+    "id": "0011",
+    "description": "sunt id omnis nihil consectetur et porro ut molestias ab et rem quia omnis voluptatem est libero reiciendis voluptatem dolores excepturi"
+  },
+  {
+    "tags": [
+      "Fog",
+      "Lake",
+      "Water"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/12.jpg",
+    "price": 9.99,
+    "name": "Gorgeous Water Tech",
+    "id": "0012",
+    "description": "perspiciatis in qui et nemo nisi ad quam consequatur et dignissimos"
+  },
+  {
+    "tags": [
+      "Person",
+      "Fog"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/13.jpg",
+    "price": 14.99,
+    "name": "Generic Fog Tech",
+    "id": "0013",
+    "description": "consectetur voluptas sint excepturi voluptas aut culpa qui excepturi dicta ut voluptas"
+  },
+  {
+    "tags": [
+      "Building",
+      "Metal"
+    ],
+    "imageUrl": "https://byui-cse.github.io/cse341-course/lesson03/images/14.jpg",
+    "price": 11.99,
+    "name": "Gorgeous Building Tech",
+    "id": "0014",
+    "description": "quisquam maxime laudantium error totam unde commodi ullam qui quo sed aperiam"
+  }
+]

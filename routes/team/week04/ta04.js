@@ -1,14 +1,8 @@
 //TA04 PLACEHOLDER
 const express = require('express');
+const controller = require('../../../controllers/team/week04/controller');
 const router = express.Router();
 
-router.get('/',(req, res, next) => {
-    res.render('pages/team/week04/ta04', {
-        title: 'Team Activity 04', 
-        path: '/ta04', // For pug, EJS
-        activeTA04: true, // For HBS
-        contentCSS: true, // For HBS
-    });
-});
+router.get('/', controller.getPage);
 
 module.exports = router;

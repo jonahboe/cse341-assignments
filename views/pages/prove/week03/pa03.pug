@@ -1,6 +1,30 @@
 extends ../../../layouts/main-layout
 
+block styles
+    link(rel="stylesheet", type="text/css", href="/stylesheets/form.css")
+    link(rel="stylesheet", type="text/css", href="/stylesheets/product-list.css")
+
 block intro
-    p This is the placeholder for Prove Activity 03
+    p Personal Project Setup
 
 block content
+    main
+
+        form.form(action="/ta03", method="POST")
+            label(for="search") Search Our Products:
+            input(type="text", name="input")#search
+            button.btn(type="submit") Search
+
+        each product in products
+            .product-area
+                .product-tile
+                    .product-caption
+                        h3 #{product.name}
+                    .product-image-area
+                        img.product-image(src=product.imageUrl)
+                    .product-info-area
+                        h4 Description:
+                        p #{product.description}
+                        h4 Price:
+                        p #{product.price}
+                        a.btn-primary(href="pa03/" + product.id) Details

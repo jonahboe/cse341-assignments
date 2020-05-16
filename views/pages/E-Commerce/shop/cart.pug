@@ -1,0 +1,24 @@
+extends ../../../layouts/E-Commerce/e-commerce-layout
+
+block styles
+    link(rel="stylesheet", type="text/css", href="/stylesheets/E-Commerce/cart.css")
+
+block content
+    main
+        if products.length > 0
+            each p in products
+                .product-area
+                    .product-tile
+                        .product-caption
+                            h2 #{p.productId.title}
+                            h3 Quantity: #{p.quantity}
+                            form(action="/eCommerce/cart-delete-item", method="POST")
+                                input(type="hidden" value=p.productId._id, name="productId")
+                                button.btn.danger.btn-delete(type="submit") Delete
+
+            .centered
+                form(action="eCommerce/create-order" method="POST")
+                    button.btn.btn-order(type="submit") Order Now!
+
+        else
+            h1 No Products in Cart!

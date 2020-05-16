@@ -1,0 +1,16 @@
+extends ../../../layouts/E-Commerce/e-commerce-layout
+
+block styles
+
+block content
+    main
+
+        h3 #{product.name}
+        img(src=product.imageUrl)
+        h4 Description:
+        p #{product.description}
+        h4 Price:
+        p #{product.price}
+        form(action="/eCommerce/cart", method="POST")
+            input(type="hidden", value=product._id, name="productId")
+            button.btn(type="submit") Add to Cart

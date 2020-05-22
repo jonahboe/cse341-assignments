@@ -1,0 +1,34 @@
+.page {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+}
+
+h2 {
+    padding: 10px;
+    font-family: cursive;
+    color: #000000;
+}
+
+.block_1 h2 {
+    background: #ff1491;
+}
+
+.block_2 h2 {
+    background: #43ff25;
+}
+
+.block_3 h2 {
+    background: #c786ff;
+}
+
+button {
+    margin: 6px;
+    background: #b8dcff;
+}
+
+button:hover {
+    background: #0065BD;
+}

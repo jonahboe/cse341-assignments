@@ -1,0 +1,44 @@
+extends ../../../layouts/main-layout
+
+block styles
+    case theme
+        when 1
+            link(rel="stylesheet", type="text/css", href="/stylesheets/team/week05/style2.css")
+        when 2
+            link(rel="stylesheet", type="text/css", href="/stylesheets/team/week05/style3.css")
+        default
+            link(rel="stylesheet", type="text/css", href="/stylesheets/team/week05/style1.css")
+
+block intro
+    p Experimenting with Sessions
+
+block content
+    main
+        .block_1
+            h2 Change theme!
+            .page
+                form(action="/ta05/change-theme", method="POST")
+                    input(type="hidden", name="theme" value=0)
+                    button.btn(type="submit") Bright
+                form(action="/ta05/change-theme", method="POST")
+                    input(type="hidden", name="theme" value=1)
+                    button.btn(type="submit") Pascal
+                form(action="/ta05/change-theme", method="POST")
+                    input(type="hidden", name="theme" value=2)
+                    button.btn(type="submit") Gray
+        .block_2
+            h2 Use a counter!
+            .page
+                h3 Count: #{count}
+            .page
+                form(action="/ta05/counter", method="POST")
+                    input(type="hidden", name="countValue" value=-1)
+                    button.btn(type="submit") -1
+                form(action="/ta05/counter", method="POST")
+                    input(type="hidden", name="countValue" value=1)
+                    button.btn(type="submit") +1
+        .block_3
+            h2 Clear session!
+            .page
+                form(action="/ta05/reset", method="POST")
+                    button.btn(type="submit") Clear

@@ -41,6 +41,11 @@ app.use((req, res, next) => {
         .catch(err => console.log(err));
 });
 
+// Set up session tracking
+const session = require('express-session');
+app.use(session({ secret: 'thiasf3rf398h3208hf3028f0329h4', resave: false, saveUninitialized: false }));
+
+// Set up our connection to the database
 const mongoose = require('mongoose');
 const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://jonahboe:JuZnmv2Wj7VJcTB8@cse341-wbw23.azure.mongodb.net/e-commerce?retryWrites=true&w=majority";
 
@@ -51,6 +56,7 @@ const ta01Routes = require('./routes/team/week01/ta01');
 const ta02Routes = require('./routes/team/week02/ta02');
 const ta03Routes = require('./routes/team/week03/ta03');
 const ta04Routes = require('./routes/team/week04/ta04');
+const ta05Routes = require('./routes/team/week05/ta05');
 
 const pa01Routes = require('./routes/prove/week01/pa01');
 const pa02Routes = require('./routes/prove/week02/pa02');
@@ -93,6 +99,7 @@ mongoose
             .use('/ta02', ta02Routes)
             .use('/ta03', ta03Routes)
             .use('/ta04', ta04Routes)
+            .use('/ta05', ta05Routes)
 
             .use('/pa01', pa01Routes)
             .use('/pa02', pa02Routes)

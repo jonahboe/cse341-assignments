@@ -91,11 +91,13 @@ exports.getProducts = (req, res, next) => {
 };
 
 exports.postDeleteProduct = (req, res, next) => {
-  const prodId = req.body.productId;
-  Product.findByIdAndRemove(prodId)
-    .then(() => {
-      console.log('DESTROYED PRODUCT');
-      res.redirect('/eCommerce/admin/products');
-    })
-    .catch(err => console.log(err));
+    const prodId = req.body.productId;
+    req.user
+        .removeFromCart(prodId)
+        .catch(err => console.log(err));
+    Product.findByIdAndRemove(prodId)
+        .then(() => {
+            res.redirect('/eCommerce/admin/products');
+        })
+        .catch(err => console.log(err));
 };

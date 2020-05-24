@@ -14,9 +14,42 @@
 const express = require('express');
 const app = express();
 
+// Set up session tracking
+const MONGODB_URI = "mongodb+srv://jonahboe:JuZnmv2Wj7VJcTB8@cse341-wbw23.azure.mongodb.net/e-commerce?retryWrites=true&w=majority";
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const store = new MongoDBStore({
+    uri: MONGODB_URI,
+    collection: 'sessions'
+});
+app.use(
+    session({
+        secret: 'thiasf3rf398h3208hf3028f0329h4',
+        resave: false,
+        saveUninitialized: false,
+        store: store
+    })
+);
+
+// Set up a parser
 const bodyParser = require('body-parser');
 const path = require('path');
 
+// Set up a user
+const User = require('./models/E-Commerce/user');
+app.use((req, res, next) => {
+    if (!req.session.user) {
+        return next();
+    }
+    User.findById(req.session.user._id)
+        .then(user => {
+            req.user = user;
+            next();
+        })
+        .catch(err => console.log(err));
+});
+
+// Set up connection to Heroku
 const cors = require('cors');
 const corsOptions = {
     origin: "https://arcane-temple-26045.herokuapp.com/",
@@ -31,24 +64,9 @@ const options = {
     family: 4
 };
 
-const User = require('./models/E-Commerce/user');
-app.use((req, res, next) => {
-    User.findById('5ebf87434941c80a002a2736')
-        .then(user => {
-            req.user = user;
-            next();
-        })
-        .catch(err => console.log(err));
-});
-
-// Set up session tracking
-const session = require('express-session');
-app.use(session({ secret: 'thiasf3rf398h3208hf3028f0329h4', resave: false, saveUninitialized: false }));
-
 // Set up our connection to the database
 const mongoose = require('mongoose');
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://jonahboe:JuZnmv2Wj7VJcTB8@cse341-wbw23.azure.mongodb.net/e-commerce?retryWrites=true&w=majority";
-
+const MONGODB_URL = process.env.MONGODB_URL || MONGODB_URI;
 const PORT = process.env.PORT || 5000 // So we can run on heroku || (OR) localhost:5000
 
 // Route setup. You can implement more in the future!
@@ -61,21 +79,24 @@ const ta05Routes = require('./routes/team/week05/ta05');
 const pa01Routes = require('./routes/prove/week01/pa01');
 const pa02Routes = require('./routes/prove/week02/pa02');
 const pa03Routes = require('./routes/prove/week03/pa03');
-const pa04Routes = require('./routes/prove/week04/pa04');
 
 const eCommerceShop = require('./routes/E-Commerce/shop');
 const eCommerceAdmin = require('./routes/E-Commerce/admin');
+const eCommerceAuth = require('./routes/E-Commerce/auth');
 
+// Get the server going
 mongoose
     .connect(
         MONGODB_URL, options
     )
     .then(result => {
+        const User = require('./models/E-Commerce/user');
         User.findOne().then(user => {
             if (!user) {
                 const user = new User({
                     name: 'Max',
                     email: 'max@test.com',
+                    password: 'pass',
                     cart: {
                         items: []
                     }
@@ -83,7 +104,6 @@ mongoose
                 user.save();
             }
         });
-
         app.use(express.static(path.join(__dirname, 'public')))
             .set('views', path.join(__dirname, 'views'))
             // For view engine as ejs
@@ -104,10 +124,10 @@ mongoose
             .use('/pa01', pa01Routes)
             .use('/pa02', pa02Routes)
             .use('/pa03', pa03Routes)
-            .use('/pa04', pa04Routes)
 
             .use('/eCommerce', eCommerceShop)
             .use('/eCommerce/admin', eCommerceAdmin)
+            .use('/eCommerce/authenticate', eCommerceAuth)
 
             .get('/', (req, res, next) => {
                 // This is the primary index, always handled last.

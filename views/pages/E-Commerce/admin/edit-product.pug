@@ -1,24 +1,21 @@
 extends ../../../layouts/E-Commerce/e-commerce-layout
 
 block styles
-    link(rel="stylesheet", type="text/css", href="/stylesheets/form.css")
+    link(rel="stylesheet", type="text/css", href="/stylesheets/E-Commerce/form.css")
 
 block content
     main
-        form.product(action=("/eCommerce/admin/" + (editing ? "edit-product" : "add-product")), method="POST")
-            .form
+        h2.form_title #{editing ? "Edit" : "Add"} Product
+        .form_block
+            form.form(action=("/eCommerce/admin/" + (editing ? "edit-product" : "add-product")), method="POST")
                 label(for="title") Title
                 input(type="text", name="title", id="title", value=(editing ? product.title : ""))
-            .form
                 label(for="imageUrl") Image URL
                 input(type="text", name="imageUrl", id="imageUrl", value=(editing ? product.imageUrl : ""))
-            .form
                 label(for="price") Price
                 input(type="number", name="price", id="price", step="0.01", value=(editing ? product.price : ""))
-            .form
                 label(for="description") Description
                 textarea(name="description", id="description", rows="5") #{editing ? product.description : ""}
-            div
-                input(type="hidden", value=(editing ? product._id : null), name="productId")
-
-            button.btn(type="submit") #{editing ? "Save" : "Add"}
+                button.btn(type="submit") #{editing ? "Save" : "Add"}
+                div
+                    input(type="hidden", value=(editing ? product._id : null), name="productId")

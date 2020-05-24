@@ -21,6 +21,7 @@ block content
                             a.btn(href=("/eCommerce/products/" + product._id)) Details
                             form(action="/eCommerce/cart", method="POST")
                                 input(type="hidden", value=product._id, name="productId")
-                                button.btn(type="submit", style="margin-left: 10px") Add to Cart
+                                if isLoggedIn
+                                    button.btn(type="submit", style="margin-left: 10px") Add to Cart
         else
             h1 No Products Found!

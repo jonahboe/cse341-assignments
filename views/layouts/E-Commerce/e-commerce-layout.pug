@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Node.js Getting Started on Heroku
+        title #{title}
         link(rel="stylesheet", type="text/css", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
         script(type="text/javascript", src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
@@ -13,57 +13,25 @@ html(lang="en")
         block styles
 
     body
-        nav.navbar.navbar-default.navbar-static-top.navbar-inverse
-            .container
-                ul.nav.navbar-nav
-                    li
-                        a(href="/", style="padding: 0 2rem; margin: 0")
-                            img.logo(src="/images/BYUI-logo.png", alt="BYU Idaho logo")
-                    li(class=(path === '/' ? 'active' : ''))
-                        a(href="/")
-                            span.glyphicon.glyphicon-home Home
-                    li.dropdown
-                        a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-expanded="false") Team Activities
-                            span.caret
-                        ul.dropdown-menu(role="menu")
-                            li(class=(path === '/ta01' ? 'active' : ''))
-                                a(href="/ta01") TA01
-                            li(class=(path === '/ta02' ? 'active' : ''))
-                                a(href="/ta02") TA02
-                            li(class=(path === '/ta03' ? 'active' : ''))
-                                a(href="/ta03") TA03
-                            li(class=(path === '/ta04' ? 'active' : ''))
-                                a(href="/ta04") TA04
-                    li.dropdown
-                        a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-expanded="false") Prove Activities
-                            span.caret
-                        ul.dropdown-menu(role="menu")
-                            li(class=(path === '/pa01' ? 'active' : ''))
-                                a(href="/pa01") PA01
-                            li(class=(path === '/pa02' ? 'active' : ''))
-                                a(href="/pa02") PA02
-                            li(class=(path === '/pa03' ? 'active' : ''))
-                                a(href="/pa03") PA03
-                            li(class=(path === '/pa04' ? 'active' : ''))
-                                a(href="/pa04") PA04
+        include ../main-menu-bar
 
-                    li.active
-                        a(href="/eCommerce") E-Commerce
-
-        div.backdrop
         header.main-header
             nav.main-header__nav
                 ul.main-header__item-list
                     li.main-header__item
                         a(class=(path === '/eCommerce/' ? 'active' : ''), href="/eCommerce/") Shop
+                    if isLoggedIn
+                        li.main-header__item
+                            a(class=(path === '/eCommerce/cart' ? 'active' : ''), href="/eCommerce/cart") Cart
+                        li.main-header__item
+                            a(class=(path === '/eCommerce/orders' ? 'active' : ''), href="/eCommerce/orders") Orders
+                        li.main-header__item
+                            a(class=(path === '/eCommerce/admin/add-product' ? 'active' : ''), href="/eCommerce/admin/add-product") Add Product
+                        li.main-header__item
+                            a(class=(path === '/eCommerce/admin/products' ? 'active' : ''), href="/eCommerce/admin/products") Admin Products
+                ul.main-header__item-list
                     li.main-header__item
-                        a(class=(path === '/eCommerce/cart' ? 'active' : ''), href="/eCommerce/cart") Cart
-                    li.main-header__item
-                        a(class=(path === '/eCommerce/orders' ? 'active' : ''), href="/eCommerce/orders") Orders
-                    li.main-header__item
-                        a(class=(path === '/eCommerce/admin/add-product' ? 'active' : ''), href="/eCommerce/admin/add-product") Add Product
-                    li.main-header__item
-                        a(class=(path === '/eCommerce/admin/products' ? 'active' : ''), href="/eCommerce/admin/products") Admin Products
+                        a(class=(path === '/eCommerce/login' ? 'active' : ''), href=(isLoggedIn ? "/eCommerce/authenticate/logout" : "/eCommerce/authenticate/login")) #{isLoggedIn ? 'Log Out' : 'Log In'}
 
         .container
             block content

@@ -1,0 +1,38 @@
+link(rel="stylesheet", type="text/css", href="/stylesheets/main.css")
+
+nav.navbar.navbar-default.navbar-static-top.navbar-inverse
+    .container
+        ul.nav.navbar-nav
+            li
+                a(href="/", style="padding: 0 2rem; margin: 0")
+                    img.logo(src="/images/BYUI-logo.png", alt="BYU Idaho logo")
+            li(class=(path === '/' ? 'active' : ''))
+                a(href="/")
+                    span.glyphicon.glyphicon-home Home
+            li.dropdown
+                a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-expanded="false") Team Activities
+                    span.caret
+                ul.dropdown-menu(role="menu")
+                    li(class=(path === '/ta01' ? 'active' : ''))
+                        a(href="/ta01") TA01
+                    li(class=(path === '/ta02' ? 'active' : ''))
+                        a(href="/ta02") TA02
+                    li(class=(path === '/ta03' ? 'active' : ''))
+                        a(href="/ta03") TA03
+                    li(class=(path === '/ta04' ? 'active' : ''))
+                        a(href="/ta04") TA04
+                    li(class=(path === '/ta05' ? 'active' : ''))
+                        a(href="/ta05") TA05
+            li.dropdown
+                a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-expanded="false") Prove Activities
+                    span.caret
+                ul.dropdown-menu(role="menu")
+                    li(class=(path === '/pa01' ? 'active' : ''))
+                        a(href="/pa01") PA01
+                    li(class=(path === '/pa02' ? 'active' : ''))
+                        a(href="/pa02") PA02
+                    li(class=(path === '/pa03' ? 'active' : ''))
+                        a(href="/pa03") PA03
+
+            li(class=(eCommerce === true ? 'active' : ''))
+                a(href="/eCommerce") E-Commerce

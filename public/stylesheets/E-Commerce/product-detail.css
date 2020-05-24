@@ -1,0 +1,18 @@
+.detail_block {
+    margin: 60px auto auto;
+    width: 80rem;
+    padding: 10px;
+    background: #e5e5e5;
+}
+
+.detail_title {
+    margin: 60px auto auto;
+    width: 80rem;
+}
+
+.detail_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75rem;
+}

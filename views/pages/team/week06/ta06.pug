@@ -1,0 +1,15 @@
+extends ../../../layouts/main-layout
+
+block styles
+    link(rel="stylesheet", type="text/css", href="/stylesheets/team/week06/game.css")
+
+block intro
+    p Let's Play a Game
+
+block content
+    main
+        h2 Play Snake!
+        .game-area
+            canvas(id="gc", width="800", height="400")
+            script
+                include ../../../../scripts/team/week06/snake.js

@@ -17,13 +17,17 @@ yFood = Math.floor(Math.random() * height);
 body = [];
 size = 5;
 function game() {
+    // Simulate movement
+    body.push({x:xPos, y:yPos});
+    while(body.length > size) {
+        body.shift();
+    }
+
     // Advance the head
     xPos += xDir;
     yPos += yDir;
-    if (xPos == -2 || xPos == width + 1 ||
-        yPos == -2 || yPos == height + 1)
-        die();
 
+    // Draw the canvas
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canv.width, canv.height);
 
@@ -36,12 +40,7 @@ function game() {
         }
     }
 
-    // Simulate movement
-    body.push({x:xPos, y:yPos});
-    while(body.length > size) {
-        body.shift();
-    }
-
+    // If we are eating
     if(xFood == xPos && yFood == yPos) {
         size++;
         xFood = Math.floor(Math.random() * width);
@@ -49,8 +48,14 @@ function game() {
     }
     ctx.fillStyle = "purple";
     ctx.fillRect(xFood * blockDim, yFood * blockDim, blockDim - 2, blockDim - 2 );
+
+    // If we died
+    if (xPos == -1 || xPos == width ||
+        yPos == -1 || yPos == height)
+        die();
 }
 
+// If we die we need to save our high score
 function die() {
     var cookies = document.cookie.split("; ");
     var highScore = 0;
@@ -65,6 +70,7 @@ function die() {
     location.reload();
 }
 
+// Use arrow keys to control
 function keyPush(evt) {
     switch(evt.keyCode) {
         case 37:

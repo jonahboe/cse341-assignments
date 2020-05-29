@@ -4,7 +4,7 @@ block styles
     link(rel="stylesheet", type="text/css", href="/stylesheets/team/week06/game.css")
 
 block intro
-    p Let's Play a Game
+    p Let's Play a Game. Based on tutorial by Chris DeLeon: https://www.youtube.com/watch?v=xGmXxpIj6vs&feature=youtu.be
 
 block content
     main
@@ -13,3 +13,4 @@ block content
             canvas(id="gc", width="800", height="400")
             script
                 include ../../../../scripts/team/week06/snake.js
+        h3 High Score: #{highScore}

@@ -74,7 +74,6 @@ exports.postLogin = (req, res, next) => {
 exports.postSignUp = (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
-    const confPassword = req.body.confPassword;
     const errors = validationResult(req);
     console.log(errors.array());
     if (!errors.isEmpty()) {

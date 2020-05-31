@@ -7,6 +7,7 @@ block content
     main
         h2.form_title Log In
         .form_block
+            p.message #{message}
             form.form(action="/eCommerce/authenticate/login", method="POST")
                 label(for="email") Email:
                 input(type="text", name="email")#email
@@ -15,3 +16,4 @@ block content
                 button.btn(type="submit") Log In
             div
                 a.btn(type="submit", href="/eCommerce/authenticate/signup") Create Account
+            p.error #{errorMessage}

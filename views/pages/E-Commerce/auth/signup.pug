@@ -7,11 +7,12 @@ block content
     main
         h2.form_title Sign Up
         .form_block
-            form.form(action="/eCommerce/authenticate/signup", method="POST")
+            form.form(action="/eCommerce/authenticate/signup", method="POST", novalidate)
                 label(for="email") Email:
-                input(type="text", name="email")#email
+                input(type="email", name="email")#email
                 label(for="password") Password:
                 input(type="password", name="password")#password
                 label(for="confPassword") Confirm Password:
                 input(type="password", name="confPassword")#confPassword
                 button.btn(type="submit") Create Account
+            p.error #{errorMessage}

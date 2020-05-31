@@ -42,3 +42,11 @@
     margin: 60px auto auto;
     width: 50rem;
 }
+
+.error {
+    color: red;
+}
+
+.message {
+    color: #0065BD;
+}

@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator/check');
 
 const User = require('../../models/E-Commerce/user');
 
@@ -14,7 +15,7 @@ exports.getLogin = (req, res, next) => {
 exports.getSignUp = (req, res, next) => {
     res.render('pages/E-Commerce/auth/signup', {
         title: 'Sign Up',
-        path: '/eCommerce/login',
+        path: '/eCommerce/signup',
         eCommerce: true,
         isLoggedIn: req.session.isLoggedIn,
     });
@@ -31,7 +32,12 @@ exports.postLogin = (req, res, next) => {
     User.findOne({ email: email })
         .then(user => {
             if (!user) {
-                return res.redirect('/eCommerce/authenticate/signup');
+                res.render('pages/E-Commerce/auth/login', {
+                    title: 'Log In',
+                    path: '/eCommerce/login',
+                    eCommerce: true,
+                    errorMessage: "Invalid email! Please try again."
+                });
             }
             bcrypt
                 .compare(password, user.password)
@@ -41,15 +47,25 @@ exports.postLogin = (req, res, next) => {
                         req.session.user = user;
                         console.log(user);
                         return req.session.save(err => {
-                            console.log(err);
                             res.redirect('/eCommerce');
                         });
                     }
-                    res.redirect('/eCommerce');
+                    else {
+                        return res.render('pages/E-Commerce/auth/login', {
+                            title: 'Log In',
+                            path: '/eCommerce/login',
+                            eCommerce: true,
+                            errorMessage: "Invalid password! Please try again."
+                        });
+                    }
                 })
                 .catch(err => {
-                    console.log(err);
-                    res.redirect('/eCommerce/authenticate/login');
+                    res.render('pages/E-Commerce/auth/login', {
+                        title: 'Log In',
+                        path: '/eCommerce/login',
+                        eCommerce: true,
+                        errorMessage: "Error occurred! Please try again."
+                    });
                 });
         })
         .catch(err => console.log(err));
@@ -59,10 +75,25 @@ exports.postSignUp = (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
     const confPassword = req.body.confPassword;
-    User.findOne({ email: email })
+    const errors = validationResult(req);
+    console.log(errors.array());
+    if (!errors.isEmpty()) {
+        return res.status(442).render('pages/E-Commerce/auth/signup', {
+            title: 'Sign Up',
+            path: '/eCommerce/signup',
+            eCommerce: true,
+            errorMessage: errors.array()[0].msg
+        });
+    }
+    User.findOne({email: email})
         .then(userDoc => {
             if (userDoc) {
-                return res.redirect('/eCommerce/authenticate/login');
+                return res.status(442).render('pages/E-Commerce/auth/signup', {
+                    title: 'Sign Up',
+                    path: '/eCommerce/signup',
+                    eCommerce: true,
+                    errorMessage: "User email already exists! Please login."
+                });
             }
             return bcrypt
                 .hash(password, 12)
@@ -70,16 +101,19 @@ exports.postSignUp = (req, res, next) => {
                     const user = new User({
                         email: email,
                         password: hashedPassword,
-                        cart: { items: [] }
+                        cart: {items: []}
                     });
                     return user.save();
                 })
                 .then(result => {
-                    res.redirect('/eCommerce/');
+                    res.render('pages/E-Commerce/auth/login', {
+                        title: 'Log In',
+                        path: '/eCommerce/login',
+                        eCommerce: true,
+                        isLoggedIn: req.session.isLoggedIn,
+                        message: "Account created successfully! Please log in."
+                    });
                 });
-        })
-        .then(result => {
-            return res.redirect('/eCommerce');
         })
         .catch(err => {
             console.log(err);

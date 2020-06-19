@@ -1,0 +1,18 @@
+extends ../../../layouts/main-layout
+
+block styles
+
+block intro
+    p Use APIs to Load New Data
+
+block content
+    main
+
+        ul#pokeList
+
+        section.pagination
+            a.btn.btn-primary( onclick="getBack()", style="margin:40px" )#backButton Back
+            a.btn.btn-primary( onclick="getNext()", style="margin:40px" )#nextButton Next
+
+    script
+        include ../../../../public/scripts/team/week09/getPages.js

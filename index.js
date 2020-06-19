@@ -78,6 +78,7 @@ const ta04Routes = require('./routes/team/week04/ta04');
 const ta05Routes = require('./routes/team/week05/ta05');
 const ta06Routes = require('./routes/team/week06/ta06');
 const ta08Routes = require('./routes/team/week08/ta08');
+const ta09Routes = require('./routes/team/week09/ta09');
 
 const pa01Routes = require('./routes/prove/week01/pa01');
 const pa02Routes = require('./routes/prove/week02/pa02');
@@ -125,6 +126,7 @@ mongoose
             .use('/ta05', ta05Routes)
             .use('/ta06', ta06Routes)
             .use('/ta08', ta08Routes)
+            .use('/ta09', ta09Routes)
 
             .use('/pa01', pa01Routes)
             .use('/pa02', pa02Routes)

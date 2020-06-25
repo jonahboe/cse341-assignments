@@ -19,13 +19,15 @@ block content
                         th #{item.name}
 
         div
-            input(type="text", name="name", style="margin-top: 2rem")#new_name
+            p(style="margin-top: 2rem")
+                b Add to the avengers and refresh the page:
+            input(type="text", name="name", style="margin-top: 0rem")#new_name
         div
             a.btn.btn-primary( onclick="addAvenger()", style="margin-top: 1rem" ) Add Avenger
 
         h2 How to use the API:
-        h4 - Got to /fetchAll to get the JSON
-        h4 - Post new names to /insert
+        h4 - Got to '/fetchAll' to get the JSON
+        h4 - Post new names to '/insert' with 'body: { name: x }'
 
     script
         include ../../../../public/scripts/team/week10/avengers.js

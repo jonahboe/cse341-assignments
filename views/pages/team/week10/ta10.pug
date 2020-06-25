@@ -1,0 +1,31 @@
+extends ../../../layouts/main-layout
+
+block styles
+    link(rel="stylesheet", type="text/css", href="/stylesheets/table.css")
+
+block intro
+    p Asynchronous JavaScript
+
+block content
+    main
+
+        h2 Here's the data:
+        label(for="user_table")#tableLable Users Table:
+            table()#user_table
+                tr.table_heading
+                    th User Name
+                each item in content.avengers
+                    tr
+                        th #{item.name}
+
+        div
+            input(type="text", name="name", style="margin-top: 2rem")#new_name
+        div
+            a.btn.btn-primary( onclick="addAvenger()", style="margin-top: 1rem" ) Add Avenger
+
+        h2 How to use the API:
+        h4 - Got to /fetchAll to get the JSON
+        h4 - Post new names to /insert
+
+    script
+        include ../../../../public/scripts/team/week10/avengers.js

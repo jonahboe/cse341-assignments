@@ -3,4 +3,4 @@ module.exports = (req, res, next) => {
         return res.redirect('/eCommerce/authenticate/login');
     }
     next();
-}
+};

@@ -79,6 +79,7 @@ const ta05Routes = require('./routes/team/week05/ta05');
 const ta06Routes = require('./routes/team/week06/ta06');
 const ta08Routes = require('./routes/team/week08/ta08');
 const ta09Routes = require('./routes/team/week09/ta09');
+const ta10Routes = require('./routes/team/week10/ta10');
 
 const pa01Routes = require('./routes/prove/week01/pa01');
 const pa02Routes = require('./routes/prove/week02/pa02');
@@ -119,6 +120,14 @@ mongoose
             //.set('view engine', 'hbs')
             .use(bodyParser({extended: true})) // For parsing the body of a POST
 
+            // For our rest APIs
+            .use((req, res, next) => {
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+                res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+                next();
+            })
+
             .use('/ta01', ta01Routes)
             .use('/ta02', ta02Routes)
             .use('/ta03', ta03Routes)
@@ -127,6 +136,7 @@ mongoose
             .use('/ta06', ta06Routes)
             .use('/ta08', ta08Routes)
             .use('/ta09', ta09Routes)
+            .use('/ta10', ta10Routes)
 
             .use('/pa01', pa01Routes)
             .use('/pa02', pa02Routes)

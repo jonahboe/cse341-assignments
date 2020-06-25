@@ -12,7 +12,7 @@ exports.get = (req, res, next) => {
 };
 
 exports.getFetchAll = (req, res, next) => {
-    res.json(dummyData);
+    res.json(content);
 };
 
 exports.postInsert = (req, res, next) => {

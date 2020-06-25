@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a06f6b5f-a23c-45ce-bb2f-089ec4d1c138" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/views/pages/team/week10/ta10.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/team/week10/ta10.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/team/week10/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/team/week10/controller.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,7 +55,7 @@
         <counts>
           <entry key="css" value="1777" />
           <entry key="gitignore" value="11" />
-          <entry key="js" value="12286" />
+          <entry key="js" value="12288" />
           <entry key="json" value="134" />
           <entry key="pug" value="6822" />
         </counts>
@@ -65,7 +65,7 @@
           <entry key="CSS" value="1777" />
           <entry key="JSON" value="134" />
           <entry key="Jade" value="6822" />
-          <entry key="JavaScript" value="12286" />
+          <entry key="JavaScript" value="12288" />
           <entry key="PLAIN_TEXT" value="11" />
         </counts>
       </usages-collector>
@@ -73,11 +73,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/team/week10/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+            <state relative-caret-position="238">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -91,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/team/week10/ta10.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
@@ -235,9 +235,9 @@
         <option value="$PROJECT_DIR$/controllers/team/week09/controller.js" />
         <option value="$PROJECT_DIR$/views/layouts/main-menu-bar.pug" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/controllers/team/week10/controller.js" />
         <option value="$PROJECT_DIR$/public/scripts/team/week10/avengers.js" />
         <option value="$PROJECT_DIR$/views/pages/team/week10/ta10.pug" />
+        <option value="$PROJECT_DIR$/controllers/team/week10/controller.js" />
       </list>
     </option>
   </component>
@@ -529,12 +529,12 @@
       <workItem from="1592107361310" duration="10627000" />
       <workItem from="1592532284339" duration="6753000" />
       <workItem from="1592678694102" duration="10687000" />
-      <workItem from="1593042475722" duration="5982000" />
+      <workItem from="1593042475722" duration="6108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178870000" />
+    <option name="totallyTimeSpent" value="178996000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -549,7 +549,7 @@
     <frame x="-1680" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1814346" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1814346" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -563,7 +563,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.15663901" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.15663901" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -858,13 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/team/week10/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="732">
@@ -883,6 +876,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/team/week10/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
         </state>
       </provider>
     </entry>
